@@ -1,34 +1,41 @@
-/*let calender = document.getElementById("root");
+const calendar = document.getElementById("calendar");
+const weekdays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
-let table = document.createElement("table");
-let tableHead = document.createElement("thead");
-tableHead.innerText = "Calendar";
-let tableBody = document.createElement("tbody");
-table.style.border = "1px solid";
-tableHead.style.textAlign = "center";
-table.style.width = "200px";
-table.style.height = "200px";
+const date = new Date();
+const day = date.getDate();
+const month = date.getMonth();
+const year = date.getFullYear();
 
-for (let i = 0; i < 3; i++) {
-  let row = document.createElement("tr");
-  tableBody.append(row);
-  row.style.textAlign = "center";
+const firstDayOfMonth = new Date(year, month, 1);
+const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  for (let i = 0; i < 3; i++) {
-    let collumn = document.createElement("td");
-    row.append(collumn);
-    collumn.style.border = "1px solid";
-    collumn.style.width = "50px";
+const dateString = firstDayOfMonth.toLocaleDateString("en-us", {
+  weekday: "long",
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+});
+
+const paddingDays = weekdays.indexOf(dateString.split(", ")[0]);
+console.log(paddingDays);
+
+for (let i = 1; i <= paddingDays + daysInMonth; i++) {
+  const days = document.createElement("div");
+  days.classList.add("day");
+
+  if (i > paddingDays) {
+    days.innerText = i - paddingDays;
+  } else {
+    days.classList.add("padding");
   }
-}
-table.append(tableBody, tableHead);
-calender.append(table);
 
-let td = document.querySelectorAll("td");
-let counter = 0;
-
-for (let i = 0; i < td.length; i++) {
-  counter++;
-  td[i].innerHTML = counter;
+  calendar.append(days);
 }
-*/
