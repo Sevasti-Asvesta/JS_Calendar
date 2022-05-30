@@ -1,4 +1,4 @@
-let calender = document.getElementById("root");
+/*let calender = document.getElementById("root");
 
 let table = document.createElement("table");
 let tableHead = document.createElement("thead");
@@ -31,3 +31,4 @@ for (let i = 0; i < td.length; i++) {
   counter++;
   td[i].innerHTML = counter;
 }
+*/
