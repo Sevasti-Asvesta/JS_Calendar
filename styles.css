@@ -4,6 +4,20 @@ body {
   justify-content: center;
   background-color: #fffcff;
 }
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border: 3px solid #92a1d1;
+}
+#film--title {
+  font-size: 25px;
+  font-weight: bold;
+}
+#film--description {
+  font-size: 18px;
+}
+
 button {
   width: 75px;
   cursor: pointer;
