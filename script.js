@@ -57,7 +57,7 @@ load();
 // Add API functionality
 let img = document.createElement("img");
 let block = document.getElementById("api");
-block.appendChild(img);
+block.prepend(img);
 let filmDescription = document.getElementById("film--description");
 let filmTitle = document.getElementById("film--title");
 
